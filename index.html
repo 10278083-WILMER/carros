@@ -1,16 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galería de Arte</title>
 
-  <!-- Fuente y hoja de estilos -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
-</head>
+  <style>
+    :root {
+      --bg: #fdf6f0;
+      --text: #2b2b2b;
+      --primary: #c0392b;
+      --card: #ffffff;
+      --border: #ddd;
+    }
 
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Poppins", Arial, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ENCABEZADO */
+    header {
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 18px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 12px;
+      font-weight: 500;
+    }
+    nav a:hover, nav a.active {
+      text-decoration: underline;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: #f9ecec;
+    }
+    .hero h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+    }
+    .hero button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .hero button:hover {
+      background: #a93226;
+    }
+
+    /* CONTENEDOR GENERAL */
+    .contenedor {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h3 {
+      color: var(--primary);
+      margin-top: 40px;
+    }
+
+    /* GALERÍA */
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: center;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    /* CONTACTO */
+    .contacto {
+      background: #fbeaea;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .contacto p {
+      margin: 6px 0;
+    }
+
+    /* PIE DE PÁGINA */
+    footer {
+      text-align: center;
+      background: var(--primary);
+      color: #fff;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
 <body>
+
   <!-- ENCABEZADO -->
   <header>
     <h1>🎨 Galería de Arte</h1>
@@ -25,10 +138,7 @@
   <section id="inicio" class="hero">
     <h2>Bienvenidos al mundo del arte</h2>
     <p>Explora las obras más famosas y deja que el arte despierte tu imaginación.</p>
-    <div class="acciones">
-      <button id="btnMensaje" class="btn">Ver mensaje</button>
-      <button id="btnTema" class="btn secundario">🌗 Tema claro/oscuro</button>
-    </div>
+    <button onclick="mostrarMensaje()">Ver mensaje</button>
   </section>
 
   <!-- GALERÍA -->
@@ -36,21 +146,21 @@
     <h3>🖼 Obras Famosas</h3>
     <div class="grid">
       <article class="card">
-        <img src="css/js/img/La noche estrellada.jpg" alt="La Noche Estrellada" />
+        <img src="css/img/La noche estrellada.jpg" alt="">
         <h4>La Noche Estrellada</h4>
-        <p>Vincent van Gogh · 1889</p>
+        <p>Vincent van Gogh · 1889 </p>
       </article>
 
       <article class="card">
-        <img src="css/js/img/Mona lisa.jpg" alt="Mona Lisa" />
+        <img src="css/img/Mona lisa.jpg" alt="Mona Lisa">
         <h4>Mona Lisa</h4>
-        <p>Leonardo da Vinci · 1503–1506</p>
+        <p>Leonardo da Vinci · 1503 - 1519 </p>
       </article>
 
       <article class="card">
-        <img src="css/js/img/La ultima cena.jpg" alt="La Última Cena" />
-        <h4>La Última Cena</h4>
-        <p>Leonardo da Vinci · 1495–1498</p>
+        <img src="css/img/La santa cena.jpg" alt="La Santa Cena">
+        <h4>La Santa Cena</h4>
+        <p>Leonardo da Vinci · 1495 - 1498 </p>
       </article>
     </div>
 
@@ -63,10 +173,16 @@
     </section>
   </main>
 
-  <!-- PIE -->
-  <footer>© 2025 · Proyecto Educativo de Arte</footer>
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    © 2025 · Proyecto Educativo de Arte
+  </footer>
 
-  <!-- JavaScript -->
-  <script src="js/script.js"></script>
+  <!-- SCRIPT -->
+  <script>
+    function mostrarMensaje() {
+      alert("El arte nos enseña a mirar el mundo con otros ojos 🎨✨");
+    }
+  </script>
 </body>
 </html>
